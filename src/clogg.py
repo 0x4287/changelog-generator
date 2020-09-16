@@ -47,7 +47,7 @@ TYPE_TEXT = {
     Type.BREAK.name: 'Breaking Changes',
     Type.BUILD.name: 'Build and Dependency Changes',
     Type.DOCS.name: 'Documentation Changes',
-    Type.FEAT.name: 'Feature Changes',
+    Type.FEAT.name: 'New Features',
     Type.FIX.name: 'Bugfixes',
     Type.MISC.name: 'Miscellaneous',
     Type.PERF.name: 'Performance Improvements',
