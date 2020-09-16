@@ -72,6 +72,7 @@ parser.add_argument('-d', help='root directory of the git project, defaults to .
 parser.add_argument('-f', action='store_true', help='force override existing output file', default=False)
 parser.add_argument('-o', help='output for the changelog file, defaults to ./CHANGELOG.md', metavar='<Output>',
                     default='./CHANGELOG.md')
+parser.add_argument('-c', action='store_true', help='enables ClogG footer at the end of the genrated changelog')
 # parser.add_argument('-s', help='version tag where teh changelog should start', metavar='<Start_Tag>')
 
 args = parser.parse_args()
@@ -166,6 +167,9 @@ for version in versions:
                     string += '\n'
                 changelog.write(string)
 
+if args.c :
+    changelog.write('\n \n--- \n This changelog was generated using [ClogG](https://github.com/0x4287/changelog-generator).')
+    
 changelog.close()
 print('successfully created changelog at: ', os.path.abspath(args.o))
 sys.exit(0)

@@ -22,3 +22,8 @@
 
 - Initially added python script (743f1f1) 
 
+
+
+---
+ This changelog was generated using [ClogG](https://github.com/0x4287/changelog-generator).
+
