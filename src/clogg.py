@@ -58,7 +58,7 @@ TYPE_TEXT = {
 CLOGG_VERSION = "v1.0.0"
 VERSION_PATTERN = re.compile('v?[0-9]+\.[0-9]+\.[0-9]+(-([0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*))?')
 TYPE_PATTERN = re.compile('^\[[a-zA-Z]{3,5}\]')
-CATEGORY_PATTERN = re.compile('\([a-zA-Z\d]+\)')
+CATEGORY_PATTERN = re.compile('\([a-zA-Z\d\ ]+\)')
 
 # reading CLI arguments
 parser = argparse.ArgumentParser(prog='clogg',
