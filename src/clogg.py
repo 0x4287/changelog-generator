@@ -47,7 +47,7 @@ TYPE_TEXT = {
     Type.BREAK.name: 'Breaking Changes',
     Type.BUILD.name: 'Build and Dependency Changes',
     Type.DOCS.name: 'Documentation Changes',
-    Type.FEAT.name: 'Feature Changes',
+    Type.FEAT.name: 'New Features',
     Type.FIX.name: 'Bugfixes',
     Type.MISC.name: 'Miscellaneous',
     Type.PERF.name: 'Performance Improvements',
@@ -56,9 +56,9 @@ TYPE_TEXT = {
 }
 
 CLOGG_VERSION = "v1.0.0"
-VERSION_PATTERN = re.compile('v[0-9]+\.[0-9]+\.[0-9]+(-([0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*))?')
+VERSION_PATTERN = re.compile('v?[0-9]+\.[0-9]+\.[0-9]+(-([0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*))?')
 TYPE_PATTERN = re.compile('^\[[a-zA-Z]{3,5}\]')
-CATEGORY_PATTERN = re.compile('\([a-zA-Z\d]+\)')
+CATEGORY_PATTERN = re.compile('\([a-zA-Z\d\ ]+\)')
 
 # reading CLI arguments
 parser = argparse.ArgumentParser(prog='clogg',
@@ -89,7 +89,7 @@ except FileNotFoundError as e:
     sys.exit(1)
 
 # reading git log data
-p = Popen(['git', 'log', '-E', '--format=@DEC%d@CMS %s@CID %H@CMD %b'], stdin=PIPE, stdout=PIPE,
+p = Popen(['git', 'log', '-E', '--format=@@DEC%d@@CMS %s@@CID %H@@CMD %b'], stdin=PIPE, stdout=PIPE,
           stderr=PIPE)
 output, err = p.communicate()
 
@@ -98,7 +98,7 @@ if err:
     print('error: directory ' + os.getcwd() + ' is not a git repository')
     sys.exit(1)
 
-output = output.decode('utf-8').split('@')
+output = output.decode('utf-8').split('@@')
 
 # parsing commits
 commits = []
