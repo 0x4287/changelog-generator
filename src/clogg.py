@@ -89,7 +89,7 @@ except FileNotFoundError as e:
     sys.exit(1)
 
 # reading git log data
-p = Popen(['git', 'log', '-E', '--format=@DEC%d@CMS %s@CID %H@CMD %b'], stdin=PIPE, stdout=PIPE,
+p = Popen(['git', 'log', '-E', '--format=@@DEC%d@@CMS %s@@CID %H@@CMD %b'], stdin=PIPE, stdout=PIPE,
           stderr=PIPE)
 output, err = p.communicate()
 
@@ -98,7 +98,7 @@ if err:
     print('error: directory ' + os.getcwd() + ' is not a git repository')
     sys.exit(1)
 
-output = output.decode('utf-8').split('@')
+output = output.decode('utf-8').split('@@')
 
 # parsing commits
 commits = []
