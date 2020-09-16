@@ -55,7 +55,7 @@ TYPE_TEXT = {
     Type.TEST.name: 'Tests'
 }
 
-CLOGG_VERSION = "v1.0.0"
+CLOGG_VERSION = "v1.1.0"
 VERSION_PATTERN = re.compile('v?[0-9]+\.[0-9]+\.[0-9]+(-([0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*))?')
 TYPE_PATTERN = re.compile('^\[[a-zA-Z]{3,5}\]')
 CATEGORY_PATTERN = re.compile('\([a-zA-Z\d\ ]+\)')
@@ -169,7 +169,7 @@ for version in versions:
 
 if args.c :
     changelog.write('\n \n--- \n This changelog was generated using [ClogG](https://github.com/0x4287/changelog-generator).')
-    
+
 changelog.close()
 print('successfully created changelog at: ', os.path.abspath(args.o))
 sys.exit(0)
