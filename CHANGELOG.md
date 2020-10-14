@@ -1,6 +1,13 @@
 # Changelog 
 
-## 1.1.0 
+## v1.2.0 
+
+### New Features 
+
+- Added -t flag (cee7963) 
+  >The new flag can be used to print a list of all available tags including their descriptions.
+
+## v1.1.0 
 
 ### Documentation Changes 
 
@@ -32,7 +39,3 @@
 
 - Initially added python script (743f1f1) 
 
-
- 
---- 
- This changelog was generated using [ClogG](https://github.com/0x4287/changelog-generator).
