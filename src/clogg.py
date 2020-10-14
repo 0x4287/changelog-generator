@@ -55,7 +55,7 @@ TYPE_TEXT = {
     Type.TEST.name: 'Tests'
 }
 
-CLOGG_VERSION = "v1.1.0"
+CLOGG_VERSION = "v1.2.0"
 VERSION_PATTERN = re.compile('v?[0-9]+\.[0-9]+\.[0-9]+(-([0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*))?')
 TYPE_PATTERN = re.compile('^\[[a-zA-Z]{3,5}\]')
 CATEGORY_PATTERN = re.compile('\([a-zA-Z\d\ ]+\)')
@@ -73,6 +73,7 @@ parser.add_argument('-f', action='store_true', help='force override existing out
 parser.add_argument('-o', help='output for the changelog file, defaults to ./CHANGELOG.md', metavar='<Output>',
                     default='./CHANGELOG.md')
 parser.add_argument('-c', action='store_true', help='enables ClogG footer at the end of the genrated changelog')
+parser.add_argument('-t', action='store_true', help='list all available tags and their descriptions')
 # parser.add_argument('-s', help='version tag where teh changelog should start', metavar='<Start_Tag>')
 
 args = parser.parse_args()
@@ -80,6 +81,13 @@ args = parser.parse_args()
 # handling -v argument
 if args.v:
     print('clogg ' + CLOGG_VERSION)
+    sys.exit(0)
+
+if args.t:
+    tags = [t.name for t in Type]
+    tags.sort()
+    for tag in tags:
+        print('\033[36m'+ tag + '\033[0m' + ':\t' + TYPE_TEXT[tag])
     sys.exit(0)
 
 # changing working directory
