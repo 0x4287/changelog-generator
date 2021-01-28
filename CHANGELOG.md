@@ -1,5 +1,13 @@
 # Changelog 
 
+## v1.3.0 
+
+### New Features 
+
+- Added prettify option to remove leading colons from messages (4e4750a) 
+
+- Changed category enclosure to square brackets (5a7498a) 
+
 ## v1.2.0 
 
 ### New Features 
@@ -39,3 +47,7 @@
 
 - Initially added python script (743f1f1) 
 
+
+ 
+--- 
+ This changelog was generated using [ClogG](https://github.com/0x4287/changelog-generator).
