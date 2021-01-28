@@ -11,7 +11,7 @@ The script separates between four parts of a single commit following the Syntax:
 ```
 [<type>] <title>
 
-(<category>) <description>
+[<category>] <description>
 ```
 
 
@@ -21,7 +21,7 @@ The script separates between four parts of a single commit following the Syntax:
 ```
 [feat] Implemented a fancy new login page
 
-(Login) A long and interesting description of the new login page
+[Login] A long and interesting description of the new login page
 ```
 
 **compiles to:**
