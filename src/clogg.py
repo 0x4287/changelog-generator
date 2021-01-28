@@ -74,6 +74,7 @@ parser.add_argument('-o', help='output for the changelog file, defaults to ./CHA
                     default='./CHANGELOG.md')
 parser.add_argument('-c', action='store_true', help='enables ClogG footer at the end of the genrated changelog')
 parser.add_argument('-t', action='store_true', help='list all available tags and their descriptions')
+parser.add_argument('-p', action='store_true', help='enables prettifier to remove colons at the beginning of messages')
 # parser.add_argument('-s', help='version tag where teh changelog should start', metavar='<Start_Tag>')
 
 args = parser.parse_args()
@@ -124,6 +125,8 @@ for entry in output:
         if match:
             cur_commit.commit_type = match.group(0)[1:-1].upper()
             cur_commit.commit_msg = entry[4 + len(match.group(0)):].strip()
+            if args.p:
+                cur_commit.commit_msg = cur_commit.commit_msg.strip(':').strip()
     elif entry[:3] == 'CID':
         cur_commit.commit_hash = entry[4:]
     elif entry[:3] == 'CMD':
