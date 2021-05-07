@@ -26,6 +26,7 @@ class Type(Enum):
     DOCS = auto()
     FEAT = auto()
     FIX = auto()
+    IMP = auto()
     MISC = auto()
     PERF = auto()
     REFAC = auto()
@@ -49,6 +50,7 @@ TYPE_TEXT = {
     Type.DOCS.name: 'Documentation Changes',
     Type.FEAT.name: 'New Features',
     Type.FIX.name: 'Bugfixes',
+    Type.IMP.name: 'Improvement of existing Features',
     Type.MISC.name: 'Miscellaneous',
     Type.PERF.name: 'Performance Improvements',
     Type.REFAC.name: 'Refactoring',
