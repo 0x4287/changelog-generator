@@ -1,5 +1,11 @@
 # Changelog 
 
+## v1.4.0 
+
+### Improvement of existing Features 
+
+- Added type 'improvement' (2fb4375) 
+
 ## v1.3.0 
 
 ### New Features 
