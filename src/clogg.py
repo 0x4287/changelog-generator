@@ -26,6 +26,7 @@ class Type(Enum):
     DOCS = auto()
     FEAT = auto()
     FIX = auto()
+    IMP = auto()
     MISC = auto()
     PERF = auto()
     REFAC = auto()
@@ -49,13 +50,14 @@ TYPE_TEXT = {
     Type.DOCS.name: 'Documentation Changes',
     Type.FEAT.name: 'New Features',
     Type.FIX.name: 'Bugfixes',
+    Type.IMP.name: 'Improvement of existing Features',
     Type.MISC.name: 'Miscellaneous',
     Type.PERF.name: 'Performance Improvements',
     Type.REFAC.name: 'Refactoring',
     Type.TEST.name: 'Tests'
 }
 
-CLOGG_VERSION = "v1.3.0"
+CLOGG_VERSION = "v1.4.0"
 VERSION_PATTERN = re.compile('v?[0-9]+\.[0-9]+\.[0-9]+(-([0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*))?')
 TYPE_PATTERN = re.compile('^\[[a-zA-Z]{3,5}\]')
 CATEGORY_PATTERN = re.compile('\[[a-zA-Z\d\ ]+\]')
